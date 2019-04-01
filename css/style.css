@@ -1,0 +1,163 @@
+@font-face {
+  font-family: 'lakeshore';
+  src: url('../fonts/LAKESHOR-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'airstream';
+  src: url('../fonts/Airstream-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 10px;
+  background-color: rgb(149, 194, 215);
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-header {
+  flex: 0 1 auto;
+}
+
+.logo-text {
+  background-color: #fff;
+
+  font-family: 'lakeshore', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 37px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.thumbnail-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 35px;
+  flex: 0 1 auto;
+
+  order: 2;
+
+  list-style: none;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.thumbnail-item {
+  display: inline-block;
+  min-width: 120px;
+  max-width: 120px;
+
+  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  transition: transform 133ms ease-in-out;
+}
+
+.thumbnail-item:hover {
+  box-shadow: 0px 0px 5px 1px #eee;
+  transform: scale(1.2);
+}
+
+.thumbnail-image {
+  display: block;
+  width: 100%;
+}
+
+
+.thumbnail-title {
+  display: block;
+  margin: 0;
+  padding: 4px 10px;
+
+  font-size: 18px;
+
+  background-color: rgb(96, 125, 139);
+  color: rgb(202, 238, 255);
+}
+
+.detail-image-container {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-image-frame {
+  position: relative;
+  text-align: center;
+
+  transition: transform 533ms;
+}
+
+.is-tiny {
+  transform: scale(0.001);
+  transition: 0s;
+}
+
+.detail-image {
+  width: 90%;
+}
+
+.detail-image-title {
+  position: absolute;
+  left: 4px;
+  bottom: -16px;
+
+  font-family: 'airstream', sans-serif;
+  color: #fff;
+  font-size: 40px;
+  text-shadow: 0px 0px 5px #00f1ff;
+}
+
+.hidden-detail .detail-image-container {
+  display: none;
+}
+
+.hidden-detail .thumbnail-list {
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden-detail .thumbnail-item {
+  min-width: 80%;
+}
+
+@media screen and (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  .thumbnail-list {
+    order: 0;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+
+  .thumbnail-item {
+    max-width: 260px;
+  }
+
+  .thumbnail-item + .thumbnail-item {
+    margin-top: 20px;
+  }
+}
